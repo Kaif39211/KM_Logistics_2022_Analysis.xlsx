@@ -17,14 +17,6 @@ Geographic Data: Destination mapping via City, State, and Pincode for regional p
 
 Financials: Order valuation in INR and currency standardizations.
 
-2. Data Challenges Identified
-Before analysis, the following "Real-World" data issues were addressed in the DATA CORRECTION & CLEANING phase:
-
-Date Corruption: Fixed "########" overflow errors and inconsistent date formatting.
-
-Categorical Inconsistency: Standardized product naming conventions and channel aliases.
-
-Redundancy: Identification and removal of duplicate transaction entries.
 
 Boolean Logic: Standardized stock status and return flags for accurate KPI calculation.
 <img width="1918" height="1008" alt="image" src="https://github.com/user-attachments/assets/fd4ea198-b2cf-48b6-8863-6f46b5864e78" />
