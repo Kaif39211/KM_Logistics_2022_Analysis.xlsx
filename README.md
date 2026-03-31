@@ -1,188 +1,198 @@
-# 📦 K.M Logistics & E-Commerce Sales Analytics (End-to-End Excel Project)
+# K.M Logistics — E-Commerce Sales Analytics (End-to-End Excel Project)
 
-## 📊 Executive Summary
-In the high-volume e-commerce sector, logistics and marketplace performance dictate profitability. This project executes an end-to-end data analysis pipeline on 31,000+ raw transactional records from K.M Logistics Pvt. Ltd. (2022 data).
+> **31,047 Records | ₹21,176,377 Gross Sales | Microsoft Excel | Pivot Tables · Slicers · Dashboard**
 
-The objective was to transform fragmented, corrupted raw data into a dynamic, interactive executive dashboard. By engineering new demographic features and standardizing logistics states, this analysis provides immediate visibility into **Marketplace Dependency, Demographic Purchasing Trends, and Regional Fulfillment Success.**
-
----
-
-## 🛠️ Technical Stack & Skills Demonstrated
-* **Tool:** Advanced Microsoft Excel (Office 365)
-* **Data Engineering (Power Query/Native Excel):** Date restoration, Null-handling, Text normalization, Duplicate removal.
-* **Feature Engineering (Formulas):** Nested `IF` statements, `VLOOKUP`/`XLOOKUP`, custom binning (Age/Demographics).
-* **Data Visualization & BI:** Pivot Tables, Pivot Charts, Interactive Slicers, Dashboard UI/UX Design.
+> ⚠️ Dataset is simulated for portfolio purposes. All figures, company names, and platform references are synthetic.
 
 ---
 
-## 🗄️ Phase 1: The Raw Data Landscape
-The initial dataset consisted of unstructured transactional logs tracking individual parcels across major Indian marketplaces.
+<img width="1517" height="594" alt="image" src="https://github.com/user-attachments/assets/4ffeb462-c3e3-4c92-9ecc-61cf000fb459" />
 
-* **Order Identifiers:** Unique Order IDs and SKU codes mapping to specific inventory units.
-* **Logistics Status:** Real-time shipment states (e.g., Delivered, Cancelled, Refunded, RTO).
-* **Sales Channels:** Attribution across Amazon, Flipkart, Myntra, Ajio, and Nalli.
-* **Geographic Data:** Destination mapping via City, State, and Pincode.
-* **Financials:** Order valuation standardized in INR.
-
-<img width="1918" height="1008" alt="Raw Data Preview" src="https://github.com/user-attachments/assets/fd4ea198-b2cf-48b6-8863-6f46b5864e78" />
 
 ---
 
-## 🧹 Phase 2: Data Transformation & "Dirty Data" Resolution
-Real-world logistics data is notoriously messy. A significant portion of this project focused on ETL (Extract, Transform, Load) principles to convert 31,000+ records into a verified, analysis-ready dataset.
+## The Problem
 
-### 1. Structural Repair & Normalization
-* **Date Restoration:** Resolved widespread "########" overflow errors in the raw timestamp column. Standardized dates into a strict `DD-MM-YYYY` format and extracted a separate **Month** dimension to enable seasonality and trend forecasting.
-* **Categorical Unification:** Cleaned the 'Gender' column, using conditional logic to merge inconsistent manual entries (e.g., "M", "Men", "Male") into strict binary categories (**Men** / **Women**).
-* **Status Verification:** Standardized fulfillment statuses to ensure "Delivered," "Cancelled," and "Refunded" orders were mutually exclusive, preventing the double-counting of recognized revenue.
+Raw logistics data from an e-commerce operation is fragmented by default — inconsistent gender entries, broken date formats, duplicate order IDs, missing geographic fields. Before any insight can be extracted, the data has to be rebuilt from the ground up.
 
-### 2. Feature Engineering for Business Intelligence
-To generate deeper insights beyond surface-level metrics, I engineered new analytical dimensions:
-* **Demographic Segmentation:** Created custom logic to bucket customers into specific age cohorts (**Teen, Adult, Senior**). This enables highly targeted marketing analysis (e.g., *Isolating the Adult cohort's preference for Sarees vs. Western Wear*).
-* **Channel Grouping:** Standardized vendor inputs to accurately attribute market share across Amazon, Flipkart, Myntra, and Ajio.
-
-### 3. Quality Assurance (QA)
-* **Data Cleansing:** Identified and purged redundant transaction IDs to prevent the overstatement of critical Sales KPIs. Addressed missing values in geographic fields to ensure regional heatmaps were comprehensive.
-
-<img width="1920" height="1003" alt="Cleaned Data Preview" src="https://github.com/user-attachments/assets/07da7a1c-0808-4a08-bce6-e6275e4959c6" />
+This project takes 31,047 raw transactional records from 2022, cleans and restructures them, then delivers a fully interactive Excel dashboard that gives stakeholders visibility into fulfillment performance, demographic trends, regional revenue, and channel dependency — all filterable in real time.
 
 ---
 
-## 📈 Phase 3: E-Commerce Apparel Sales Performance Dashboard
+## Dataset
 
-## 📌 Project Overview
-This project is an end-to-end data analysis of an e-commerce apparel retailer. The objective of this project is to analyze raw sales data, uncover purchasing trends, and build an interactive dashboard using Microsoft Excel to help stakeholders make data-driven decisions regarding inventory, marketing channels, and target demographics.
+| Field | Detail |
+|---|---|
+| Records | 31,047 rows |
+| Period | Full year 2022 |
+| Gross Sales | ₹21,176,377 |
+| Platforms | Amazon, Myntra, Flipkart, Ajio, Nalli, Meesho |
+| Geography | Pan-India (city, state, pincode) |
 
-## ⚠️ Data Disclaimer
-**Please Note:** The dataset used for this project is strictly for **educational and portfolio demonstration purposes**. 
-* The data is synthetic/mocked and does not represent the actual proprietary sales, revenue, or customer data of any real-world companies or platforms mentioned (e.g., Amazon, Myntra, Flipkart, Ajio). 
-* Any resemblance to real company figures or demographic behavior is purely coincidental. 
-* This project is a proof-of-concept to demonstrate data cleaning, aggregation, and visualization skills in a simulated business environment.
-
-## 🛠️ Tools & Technologies Used
-* **Microsoft Excel:** Data Cleaning, Data Processing, Pivot Tables, Pivot Charts, Dashboard Creation.
-
-## 📊 Key Metrics & Insights Analyzed
-The dashboard provides a macro-level view of business performance across several key dimensions:
-
-1. **Monthly Sales Trends (`Month-Wise Sales`):**
-   * Analyzed a full calendar year of sales across 8 apparel categories (Blouse, Bottom, Ethnic Dress, Kurta, Saree, Set, Top, Western Dress).
-   * **Insight:** Identified peak purchasing months to help optimize future inventory stocking and seasonal marketing campaigns. (Note: Kurta and Sets consistently drive the highest volume).
-
-2. **Channel Performance (`Channel-Wise Sales`):**
-   * Evaluated revenue streams across 7 primary e-commerce platforms.
-   * **Insight:** Amazon (35%) and Myntra (23%) dominate the sales channels, accounting for nearly 60% of total revenue. Resources should be heavily allocated to maintaining these platform relationships.
-
-3. **Demographic Breakdown (`Gender & Age Category`):**
-   * **Gender:** Women represent the overwhelming majority of the customer base, driving 69% of total sales compared to Men (31%).
-   * **Age:** Adults constitute the primary purchasing segment (63%), followed by Old Adults (20%) and Teens (17%).
-   * **Actionable Takeaway:** Marketing spend and product development should remain hyper-focused on Adult Women, as they are the core revenue drivers.
-
-4. **Geographic Distribution (`Top 5 Sales by State`):**
-   * Pinpointed the highest-performing regions.
-   * **Insight:** Maharashtra and Karnataka are the top two states for gross revenue. Regionalized targeted ad campaigns and localized supply chain hubs should prioritize these areas to reduce shipping times and increase market penetration.
-
-## ⚙️ Methodology & Steps Taken
-1. **Data Cleaning:** Standardized text formatting, handled missing values, and ensured data types (currency, dates) were accurate.
-2. **Data Aggregation:** Utilized Excel Pivot Tables to summarize hundreds of thousands of rows of transactional data into digestible metrics.
-3. **Data Visualization:** Built dynamic charts tied to the pivot tables to represent the data visually, ensuring stakeholders can understand performance at a glance.
-4. **Dashboard Assembly:** Designed a clean, centralized layout placing the most critical KPIs (Sales by Channel, Demographics, and Time) into a single viewport.
-
-## 🚀 How to Use This Repository
-1. Download the `.xlsx` file included in this repository.
-2. Open in Microsoft Excel (2016 or newer recommended for full chart compatibility).
-3. Navigate to the `Dashboard` tab to view the visual summary.
-4. Raw data and pivot calculations are located in their respective, labeled sheets for deep-dive analysis.
-
-<img width="1919" height="1010" alt="Analytical Charts" src="https://github.com/user-attachments/assets/2c1be1c0-65e7-4956-91ba-131df36d6afa" />
+**Schema:** `Order ID`, `Customer ID`, `Gender`, `Age`, `Date`, `Status`, `Channel`, `SKU`, `Category`, `Size`, `Qty`, `Amount`, `Ship City`, `Ship State`, `Ship Pincode`, `B2B`
 
 ---
 
-## 🎯 Phase 4:  E-Commerce Apparel Sales: Aggregation & Insights Report
+## Phase 1 — Raw Data Landscape
 
-## 📌 Project Overview
-This project focuses on data processing and aggregation for an e-commerce apparel retailer. The objective is to transform raw, transactional data into high-level pivot summaries to extract actionable business insights regarding customer demographics, regional performance, and sales channel efficiency.
+The initial dataset tracked individual parcels across major Indian marketplaces.
 
-## ⚠️ Data Disclaimer
-**Please Note:** The dataset used for this project is strictly for **educational and portfolio demonstration purposes**. 
-* The data is synthetic/mocked and does not represent the actual proprietary sales, revenue, or customer data of any real-world companies or platforms mentioned (e.g., Amazon, Myntra, Flipkart, Ajio). 
-* Any resemblance to real company figures, order volumes, or demographic behavior is purely coincidental. 
-* This project is a proof-of-concept to demonstrate data cleaning, aggregation, and analytical skills in a simulated business environment.
+- Unique Order IDs and SKU codes per transaction
+- Fulfillment states: Delivered, Cancelled, Refunded, Returned
+- Sales attribution across 7 platforms
+- Geographic mapping via city, state, and pincode
+- Order valuation in INR
 
-## 🛠️ Tools & Technologies Used
-* **Microsoft Excel:** Data Cleaning, Pivot Tables, Statistical Aggregation, Business Reporting.
+<img width="1902" height="790" alt="image" src="https://github.com/user-attachments/assets/f58e3f2e-674f-44cb-a9b1-56fd944eb4f8" />
 
-## 📊 Key Business Insights Extracted
-Based on the aggregated data of over 31,000 recorded transactions totaling ₹21,176,377 in gross sales, the following insights were established:
-
-1. **Demographic Dominance (`Gender`)**
-   * Women are the primary consumer base, accounting for ~69% of the total order volume (21,553 orders) and driving the vast majority of gross revenue. 
-   * **Actionable Takeaway:** Marketing spend and product acquisition should remain heavily skewed toward the female demographic to maximize ROI.
-
-2. **Age Segmentation (`Age Category`)**
-   * The "Adult" segment (30-49 years) is the leading demographic, accounting for 43.57% of total sales. However, the "Teen" segment closely follows at 42.73%. 
-   * **Actionable Takeaway:** The brand is successfully capturing both mature and youthful audiences. Campaigns can be split-tested to target these two distinct, highly profitable age groups.
-
-3. **Regional High-Performers (`Top 10 States`)**
-   * Sales are heavily concentrated in specific regions. Maharashtra, Karnataka, and Uttar Pradesh form the top tier of regional sales, collectively generating roughly 35% of total nationwide revenue.
-   * **Actionable Takeaway:** Supply chain logistics, warehouse distribution, and localized ad targeting should be prioritized in these three states to improve delivery times and capitalize on high demand.
-
-4. **Sales Channel Efficiency (`E-Commerce Platforms`)**
-   * The business is highly dependent on top-tier e-commerce aggregators. Amazon, Myntra, and Flipkart are the highest contributing channels, responsible for ~80% of total gross sales. 
-   * **Actionable Takeaway:** While these platforms are crucial for volume, the business should investigate strategies to boost direct-to-consumer sales or improve margins on lower-performing channels (like Meesho and Ajio) to reduce platform dependency.
-
-## ⚙️ Methodology
-1. **Data Aggregation:** Utilized Excel Pivot Tables to summarize high-volume transactional data into key business dimensions (Time, Geography, Channel, Demographics).
-2. **Order Status Tracking:** Categorized order lifecycle states (Delivered, Cancelled, Refunded, Returned) to provide a baseline for future operational efficiency analysis.
-3. **Insight Generation:** Translated raw pivot totals into percentage-based insights for clear, executive-level communication.
-
-<img width="1901" height="999" alt="Annual Sales Overview" src="https://github.com/user-attachments/assets/18902c31-f46e-457c-ba4f-7fb59f6dffea" />
 
 ---
 
-## 🕹️ Phase 5:  K.M. Logistics Pvt Ltd: 2022 Annual E-Commerce Sales Dashboard
+## Phase 2 — Data Cleaning & Feature Engineering
 
-## 📌 Project Overview
-This project involves the end-to-end development of an interactive, executive-level Excel dashboard for "K.M. Logistics Pvt Ltd". The objective was to analyze an extensive dataset of 2022 e-commerce transactions, aggregate the data, and build a dynamic visual reporting tool. This dashboard empowers stakeholders to filter data dynamically and extract actionable insights regarding logistics performance, regional sales distribution, and customer demographics.
+**Structural Fixes**
+- **Date column:** Resolved `########` overflow errors across the timestamp column. Standardized to `DD-MM-YYYY` and extracted a `Month` dimension for trend analysis
+- **Gender column:** Merged inconsistent entries (`M`, `Men`, `Male` → `Men` / `W`, `Women` → `Women`) using conditional logic
+- **Status column:** Ensured Delivered, Cancelled, and Refunded are mutually exclusive to prevent double-counting revenue
+- **Duplicates:** Purged redundant transaction IDs to prevent overstatement of sales KPIs
+- **Missing values:** Addressed gaps in geographic fields for complete regional coverage
 
-## ⚠️ STRICT DATA DISCLAIMER
-**CONFIDENTIALITY NOTICE:** The data, company name (K.M. Logistics Pvt Ltd), and metrics presented in this project are **strictly synthetic and mocked for portfolio and educational purposes only**. 
-* This dashboard does not contain, reflect, or utilize any real proprietary, confidential, or operational data from any actual entity named K.M. Logistics, nor does it reflect real data from the e-commerce platforms mentioned (Amazon, Flipkart, Myntra, etc.).
-* All financial figures, order volumes, and demographic breakdowns are simulated to demonstrate data visualization and analytical competencies.
+**Feature Engineering**
+- **Age cohorts:** Bucketed customers into Teen (<25), Adult (25–49), Senior (50+) using nested `IF` logic
+- **Channel grouping:** Standardized vendor inputs for accurate platform attribution
 
-## 🛠️ Tools & Technologies
-* **Microsoft Excel:** Advanced Data Cleaning, Pivot Tables, Pivot Charts, Slicer Integration, Dynamic Dashboard Design.
+<img width="1920" height="739" alt="image" src="https://github.com/user-attachments/assets/b30d1119-8b6d-4748-8f06-4ed0ef432369" />
 
-## 🎛️ Dashboard Features & Interactivity
-This dashboard was built with user interaction in mind. It includes a centralized control panel utilizing **Excel Slicers**, allowing users to filter the entire dashboard's metrics simultaneously by:
-* **Month:** To analyze seasonal trends and specific timeframes.
-* **Category:** To drill down into specific apparel performance (e.g., Ethnic Dress vs. Western Dress).
-* **Age Value:** To isolate purchasing behaviors of Teens, Adults, or Old Adults.
-* **Channel:** To evaluate specific platform performance (e.g., Amazon vs. Ajio).
-* **Gender:** To segment sales and logistics data by male or female consumer bases.
-
-## 📊 Key Business Insights (2022 Annual Review)
-
-1. **Logistics & Fulfillment Success (`Order Status`)**
-   * The logistics pipeline is highly efficient, boasting a **92% successful delivery rate**. 
-   * Cancellations sit at only 2%, and Returns at 3%, indicating strong inventory management and accurate product descriptions.
-
-2. **Geographical Revenue Centers (`State-Wise Sales`)**
-   * **Maharashtra (₹2.99M)** and **Karnataka (₹2.64M)** are the undisputed leaders in sales volume. 
-   * **Actionable Insight:** K.M. Logistics should ensure its primary warehousing and last-mile delivery infrastructure is heavily concentrated in these states to maintain the 92% delivery success rate at scale.
-
-3. **Demographic Dominance (`Gender Breakdown`)**
-   * The consumer base is heavily skewed, with **Women accounting for 69% of total sales** compared to Men (31%).
-
-4. **Temporal Trends (`Month-Wise Sales Hike`)**
-   * A dual-axis analysis of Order Quantity vs. Total Amount reveals distinct seasonal peaks. Sales volume peaks sharply in **March**, followed by a steady decline through the summer, before stabilizing in Q4. 
-   * **Actionable Insight:** Logistics staffing and warehouse capacity must be scaled up proactively in Q1 (Jan-Mar) to handle the annual volume surge.
-
-5. **Channel Distribution (`Sales: Channel-Wise`)**
-   * **Amazon (35%)** and **Myntra (23%)** are the dominant entry points for logistics volume. Integrating direct API connections with these specific platforms for shipping and tracking should be an operational priority.
-
-<img width="1920" height="1005" alt="Interactive Dashboard" src="https://github.com/user-attachments/assets/6ef7ba49-347d-4f6d-af88-552943726743" />
 
 ---
+
+## Phase 3 — Analysis & Key Findings
+
+### Channel Performance
+
+| Platform | Orders | Share |
+|---|---|---|
+| Amazon | 11,016 | 35.5% |
+| Myntra | 7,254 | 23.4% |
+| Flipkart | 6,703 | 21.6% |
+| Ajio | 1,931 | 6.2% |
+| Nalli | 1,484 | 4.8% |
+| Meesho | 1,398 | 4.5% |
+| Others | 1,261 | 4.1% |
+
+Amazon and Myntra alone account for nearly 60% of total volume. Flipkart at 21.6% is a significant third channel often overlooked in the summary view.
+
+### Demographics
+
+**Gender**
+- Women: 69.2% of orders
+- Men: 30.4% of orders
+
+**Age**
+- Adult (25–49): 62.9%
+- Senior (50+): 19.6%
+- Teen (<25): 17.5%
+
+Adult women are the dominant buying segment by a significant margin.
+
+### Top Categories by Revenue
+
+| Category | Revenue |
+|---|---|
+| Set | ₹10,507,546 |
+| Kurta | ₹4,959,377 |
+| Western Dress | ₹3,148,836 |
+| Top | ₹1,186,199 |
+| Saree | ₹1,010,471 |
+
+Sets alone account for nearly 50% of total gross revenue — the single most important product line.
+
+### Regional Performance — Top 5 States
+
+| State | Revenue |
+|---|---|
+| Maharashtra | ₹2,990,221 |
+| Karnataka | ₹2,646,358 |
+| Uttar Pradesh | ₹2,104,659 |
+| Telangana | ₹1,712,439 |
+| Tamil Nadu | ₹1,678,877 |
+
+Maharashtra and Karnataka together represent ~27% of total national revenue.
+
+### Fulfillment & Seasonality
+
+- **Delivery rate:** 92.3% (28,641 of 31,047 orders delivered)
+- **Cancellations:** 2.7% | **Returns:** 3.4% | **Refunds:** 1.7%
+- **Peak month:** March (₹1,928,066) — Q1 is the strongest quarter, sales decline steadily through summer and stabilize in Q4
+
+<img width="2347" height="866" alt="image" src="https://github.com/user-attachments/assets/cf4cea3f-a785-42a4-bb51-55c28a5a4b65" />
+
+
+<img width="1010" height="691" alt="image" src="https://github.com/user-attachments/assets/885e6ca7-1433-474e-bb08-a355111123ce" />
+<img width="783" height="468" alt="image" src="https://github.com/user-attachments/assets/888c648f-38dc-4026-8c21-0b67fba7f594" />
+
+
+
+---
+
+## Phase 4 — Interactive Dashboard
+
+Built in Excel with a centralized slicer control panel. All charts and KPIs update simultaneously when filtered.
+
+**Slicers:**
+- Month
+- Category
+- Age Group
+- Channel
+- Gender
+
+**KPIs on dashboard:**
+- Total orders and gross revenue
+- Order status breakdown (Delivered / Cancelled / Returned / Refunded)
+- Channel-wise sales distribution
+- State-wise revenue map
+- Month-wise order quantity vs. amount (dual axis)
+- Gender and age segment breakdown
+
+<img width="1728" height="666" alt="image" src="https://github.com/user-attachments/assets/56c3b9b9-f18f-41c7-9fc5-084f450b54e9" />
+
+
+---
+
+## Recommendations
+
+**1. Protect the Amazon & Myntra relationship**
+60% of volume runs through two platforms. Any fee increase or algorithm change on either is a direct revenue hit. Investigate direct-to-consumer or Flipkart growth as a hedge.
+
+**2. Double down on Sets**
+₹10.5M in revenue — nearly half of total gross sales from one category. Inventory, procurement, and marketing resources should weight heavily toward Sets, especially heading into Q1.
+
+**3. Scale logistics infrastructure in Maharashtra and Karnataka**
+These two states generate ₹5.6M combined. Warehousing and last-mile delivery concentration here directly protects the 92.3% delivery rate at scale.
+
+**4. Q1 capacity planning**
+March is the peak month every year. Logistics staffing and warehouse capacity need to be scaled up in January ahead of the Q1 surge, not in response to it.
+
+---
+
+## How to Use
+
+1. Download `KM_Logistics_2022_Analysis.xlsx`
+2. Open in Microsoft Excel 2016 or newer
+3. Go to the `Dashboard` tab
+4. Use the slicers on the left to filter by month, category, age, channel, or gender
+5. Raw data and pivot tables are in their respective labeled sheets
+
+---
+
+ **Role: Data Analyst — Sales & Logistics Operations** 
+
  
-**Contact:** [LinkedIn](http://www.linkedin.com/in/kaif-mahaldar-18300b333) | [Email](mailto:kaifmahaldar5@gmail.com)
+ **Others Project -**
+ 
+ 1) https://github.com/Kaif39211/pharmaceutical-inventory-analysis-SQL 
+                                              2) https://github.com/Kaif39211/zepto_inventory_analysis.sql
+
+
+                      
+## **Contact: [LinkedIn](http://www.linkedin.com/in/kaif-mahaldar-18300b333) | [Email](mailto:kaifmahaldar5@gmail.com)**
