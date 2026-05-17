@@ -191,7 +191,7 @@ March is the peak month every year. Logistics staffing and warehouse capacity ne
  **Others Project -**
  
  1) https://github.com/Kaif39211/pharmaceutical-inventory-analysis-SQL 
-                                              2) https://github.com/Kaif39211/zepto_inventory_analysis.sql
+ 2) https://github.com/Kaif39211/zepto_inventory_analysis.sql
 
 
                       
